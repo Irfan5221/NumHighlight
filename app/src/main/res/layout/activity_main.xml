@@ -1,0 +1,54 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/white"
+    tools:context=".activities.MainActivity">
+
+    <!-- Title Header -->
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Number Highlighter"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/ruleSelector"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Rule Selector Spinner -->
+    <Spinner
+        android:id="@+id/ruleSelector"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/design_default_color_error"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/numberGrid"/>
+
+    <!-- GridView for Numbers -->
+    <GridView
+        android:id="@+id/numberGrid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:numColumns="5"
+        android:verticalSpacing="8dp"
+        android:horizontalSpacing="8dp"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+        android:stretchMode="columnWidth"
+        app:layout_constraintTop_toBottomOf="@id/ruleSelector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
